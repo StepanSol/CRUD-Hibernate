@@ -19,17 +19,16 @@
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>6.4.4.Final</version> <!-- Актуальная версия Hibernate 6.x -->
+            <version>6.4.4.Final</version>
         </dependency>
 
-        <!-- PostgreSQL JDBC Driver -->
+
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.7.3</version> <!-- Последняя версия на 2024 -->
+            <version>42.7.3</version>
         </dependency>
 
-        <!-- Jakarta Persistence API (входит в Hibernate, но можно явно указать) -->
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
