@@ -94,3 +94,4 @@ public class DBManager {
         System.out.println(em.find(Product.class, id).toDTO());
     }
 }
+
