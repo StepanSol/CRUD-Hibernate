@@ -24,12 +24,15 @@ public class DBManager {
         this.connection = connection;
     }
 
-    public void createTable() throws SQLException {
-        Statement statement = connection.createStatement();
-        statement.executeUpdate("CREATE TABLE IF NOT EXISTS product(" +
-                "id serial primary key, " +
-                "name VARCHAR(40) not null, " +
-                "price NUMERIC(10,2))");
+    public void createTable() {
+        em.getTransaction().begin();
+        em.createNativeQuery(
+                "CREATE TABLE IF NOT EXISTS product (" +
+                        "id serial primary key, " +
+                        "name VARCHAR(40) not null, " +
+                        "price NUMERIC(10,2))"
+        ).executeUpdate();
+        em.getTransaction().commit();
     }
 
     public void displayTableJPA() {
@@ -94,3 +97,4 @@ public class DBManager {
         System.out.println(em.find(Product.class, id).toDTO());
     }
 }
+
